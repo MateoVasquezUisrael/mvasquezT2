@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mvasquezT2.Views.Notas"
+             Title="Notas">
+    <ScrollView>
+    <VerticalStackLayout>
+        <Label 
+            HorizontalOptions="Center" 
+            Text="SISTEMA DE CALIFICACIONES" 
+            FontSize="Title"/>
+
+            <Label  
+                HorizontalOptions="Start"
+                Text="Parcial 1"
+                FontSize="Subtitle"/>
+        
+            <Grid 
+                Padding="10" 
+                RowSpacing="5" 
+                ColumnSpacing="5" 
+                ColumnDefinitions="auto, auto"  
+                RowDefinitions="auto,auto,auto,auto">
+
+                <Picker 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    x:Name="StudentPicker"
+                    Title="Escoge un estudiante"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Center"
+                    >
+                    <Picker.Items>
+                        <x:String>Mateo Vasquez</x:String>
+                        <x:String>Carlos Casco</x:String>
+                        <x:String>Dayana Chinchín</x:String>
+                        <x:String>Daysi Achig</x:String>
+                        <x:String>Guillermo Calvache</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Ingrese nota de seguimiento 1"
+                    VerticalOptions="Center"/>
+                <Entry 
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Placeholder="Ingrese la nota"
+                    VerticalOptions="Center"
+                    Keyboard="Numeric"/>
+            </Grid>
+
+            <Label
+                HorizontalOptions="Start" 
+                Text="Parcial 2" 
+                FontSize="Subtitle"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

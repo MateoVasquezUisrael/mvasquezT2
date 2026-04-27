@@ -11,7 +11,7 @@ namespace mvasquezT2
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            return new Window(new Views.Notas());
         }
     }
 }
