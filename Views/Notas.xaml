@@ -4,11 +4,28 @@
              x:Class="mvasquezT2.Views.Notas"
              Title="Notas">
     <ScrollView>
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="10">
         <Label 
             HorizontalOptions="Center" 
             Text="SISTEMA DE CALIFICACIONES" 
             FontSize="Title"/>
+
+        <Picker 
+            Grid.Row="0"
+            Grid.Column="0"
+            x:Name="StudentPicker"
+            Title="Escoge un estudiante"
+            HorizontalOptions="Fill"
+            VerticalOptions="Center">
+                <Picker.Items>
+                    <x:String>Mateo Vasquez</x:String>
+                    <x:String>Carlos Casco</x:String>
+                    <x:String>Dayana Chinchín</x:String>
+                    <x:String>Daysi Achig</x:String>
+                    <x:String>Guillermo Calvache</x:String>
+                </Picker.Items>
+            </Picker>
+
 
             <Label  
                 HorizontalOptions="Start"
@@ -22,22 +39,52 @@
                 ColumnDefinitions="auto, auto"  
                 RowDefinitions="auto,auto,auto,auto">
 
-                <Picker 
-                    Grid.Row="0"
+                <Label
+                    Grid.Row="1"
                     Grid.Column="0"
-                    x:Name="StudentPicker"
-                    Title="Escoge un estudiante"
-                    HorizontalOptions="Fill"
+                    Text="Ingrese nota de seguimiento 1"
+                    VerticalOptions="Center"/>
+                <Entry 
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Placeholder="Ingrese la nota"
                     VerticalOptions="Center"
-                    >
-                    <Picker.Items>
-                        <x:String>Mateo Vasquez</x:String>
-                        <x:String>Carlos Casco</x:String>
-                        <x:String>Dayana Chinchín</x:String>
-                        <x:String>Daysi Achig</x:String>
-                        <x:String>Guillermo Calvache</x:String>
-                    </Picker.Items>
-                </Picker>
+                    Keyboard="Numeric"
+                    x:Name="FirstNoteInput"/>
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Ingrese nota de examen 1"
+                    VerticalOptions="Center"/>
+                <Entry 
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Placeholder="Ingrese la nota"
+                    VerticalOptions="Center"
+                    Keyboard="Numeric"
+                    x:Name="SecondNoteInput"/>
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    VerticalOptions="Center"
+                    Text="Aquí vera su nota:"/>
+                <Label 
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    x:Name="FirstFinalNote"/>
+            </Grid>
+
+            <Label
+                HorizontalOptions="Start" 
+                Text="Parcial 2" 
+                FontSize="Subtitle"/>
+            <Grid 
+                Padding="10" 
+                RowSpacing="5" 
+                ColumnSpacing="5" 
+                ColumnDefinitions="auto, auto"  
+                RowDefinitions="auto,auto,auto,auto">
 
                 <Label
                     Grid.Row="1"
@@ -49,13 +96,41 @@
                     Grid.Column="1"
                     Placeholder="Ingrese la nota"
                     VerticalOptions="Center"
-                    Keyboard="Numeric"/>
+                    Keyboard="Numeric"
+                    x:Name="ThirdNoteInput"/>
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Ingrese nota de examen 1"
+                    VerticalOptions="Center"/>
+                <Entry 
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Placeholder="Ingrese la nota"
+                    VerticalOptions="Center"
+                    Keyboard="Numeric"
+                    x:Name="FourthNoteInput"/>
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    VerticalOptions="Center"
+                    Text="Aquí vera su nota:"/>
+                <Label 
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    x:Name="SecondFinalNote"/>
             </Grid>
+        
+            <DatePicker 
+                Date="2026-04-27"
+                Format="dd/MM/yyyy" 
+                x:Name="datePickerMio"/>
+        
+            <Button Text="Calcule su nota" Pressed="Button_Pressed"/>
 
-            <Label
-                HorizontalOptions="Start" 
-                Text="Parcial 2" 
-                FontSize="Subtitle"/>
+            <Label Text="Nota Final: "/>
+            <Label x:Name="FinalNote"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
