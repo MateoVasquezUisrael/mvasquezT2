@@ -4,11 +4,18 @@ namespace mvasquezT2.Views;
 
 public partial class Notas : ContentPage
 {
-	public Notas()
+    private string _user;
+	public Notas(string user, string pass)
 	{
 		InitializeComponent();
+        _user = user;
 	}
 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await DisplayAlertAsync("Inicio de sesión exitoso", $"Bienvenido {_user}", "Ok");
+    }
     private async void Button_Pressed(object sender, EventArgs e)
     {
 		try {

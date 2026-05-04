@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using mvasquezT2.Views;
 
 namespace mvasquezT2
 {
@@ -11,7 +12,7 @@ namespace mvasquezT2
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new Views.Notas());
+            return new Window(new NavigationPage(new Login()));
         }
     }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mvasquezT2.Views.Login"
+             Title="Login">
+    <VerticalStackLayout Padding="20">
+        <Label 
+            Text="Inicio de sesión"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="Title"/>
+        <Entry x:Name="emailInput" Keyboard="Email" Placeholder="Usuario"/>
+        <Entry x:Name="passInput" Keyboard="Email" Placeholder="Contraseña"/>
+        <Button x:Name="loginButton" Pressed="loginButton_Pressed"/>
+    </VerticalStackLayout>
+</ContentPage>
